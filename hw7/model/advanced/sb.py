@@ -22,7 +22,8 @@ def scatterMatrix(df, count=5):
 def correlationHeatmap(df):
     """Use seaborn to produce a heatmap of the columns' correlation"""
     # heatmap of correlations
-    sns.heatmap(df.corr())
-
+    temp_df=df.drop("diagnosis",axis=1)
+    sns.heatmap(temp_df.corr())
+    
     # show plot
     plt.show()
